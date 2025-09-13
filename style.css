@@ -213,7 +213,7 @@ html {
     height: 48px;
     line-height: 48px;
     text-align: center;
-    box-shadow: 0 2px 8px blue;
+    box-shadow: 0 2px 8px navy;
     text-decoration: none;
     transition: background 0.2s, color 0.2s, transform 0.2s;
     position: absolute;
