@@ -7,67 +7,208 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <!-- Subtle animated background -->
+    <div class="animated-bg">
+        <div class="bg-shape shape1"></div>
+        <div class="bg-shape shape2"></div>
+        <div class="bg-shape shape3"></div>
+    </div>
+    
     <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experiences">Experiences</a></li>
-            <li><a href="#contact">Contact Me</a></li>
-        </ul>
-    </nav>
-    <header class="greeting-header">
-        <div class="greeting-content">
-            <div class="greeting-text">
-                <span id="greeting" class="main-greeting"></span>
-                <h1 class="main-name">I'm Boglarka Csanadi</h1>
-                <p class="main-subtitle">Take a look around my portfolio!</p>
-             </div>   
-             <img src="assets/BC_LinkedIn.PNG" alt="Profile picture" class="profile-pic" width="200" />
+        <div class="nav-container">
+            <div class="logo">BC</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experiences">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-        <a href="#about" class="down-arrow" aria-label="Scroll to About Me">&#8595;</a>
+    </nav>
+    
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span id="greeting" class="greeting"></span>
+                <h1 class="name">I'm Boglarka Csanadi</h1>
+                <p class="tagline">Computer Science Student at the University of Florida</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn primary">View My Work</a>
+                    <a href="#contact" class="btn secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/BC_LinkedIn.PNG" alt="Boglarka Csanadi" class="profile-img" />
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </a>
     </header>
     <section id="about">
-        <h2>About Me</h2>
-        <p>I'm a third year computer science student and I love fried cheesecake.</p>
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a third-year Computer Science student at the University of Florida with the dream of becoming a Disney Imagineer or Universal Creative designer. I aspire to create immersive experiences for guests unlike anything seen before!</p>
+                    <br><p>I believe the future of theme parks and the entertainment industry lies in the hands of creative minds like mine who aim to stretch the bounds of technology with tools like AI and virtual reality.</p>
+                </div>
+                
+                <div class="about-details">
+                    <div class="detail-section">
+                        <h3>Education</h3>
+                        <p><strong>University of Florida</strong> | Expected May 2027</p>
+                        <p>B.S. in Computer Science, Minor in Anthropology</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">C++</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>Certifications</h3>
+                        <div class="certifications-list">
+                            <div class="cert-item">
+                                <span class="cert-name">AI & Data Analytics in Tourism, Hospitality, and Event Management</span>
+                                <span class="cert-status">In Progress</span>
+                            </div>
+                            <div class="cert-item">
+                                <span class="cert-name">AI Fundamentals and Applications</span>
+                                <span class="cert-status">Completed</span>
+                            </div>
+                            <div class="cert-item">
+                                <span class="cert-name"> 2016 Microsoft Office Specialist (Word, Excel, PowerPoint, Outlook)</span>
+                                <span class="cert-status">Completed</span>
+                            </div>
+                            <div class="cert-item">
+                                <span class="cert-name">Intuit Entrepreneurship and Small Business</span>
+                                <span class="cert-status">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <section id="projects">
-        <h2>Projects</h2>
-        <p>Below are some of the projects I've worked on.</p>
-        <div class ="project-cards">
-            <div class="project-pokemon-card">
-                <div class="card-header">
-                    <span class="card-title">Sudoku</span>
-                    <span class="card-type">Logic</span>
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/minnie.jpeg" alt="Pomodoro App" />
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Project</a>
+                                <a href="https://github.com/bcsanadi/pomodoro-app" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Pomodoro App (In Development)</h3>
+                        <p>A productivity tool that uses the Pomodoro Technique to help users manage their time effectively, featuring interactive elements and a playful design.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
                 </div>
-                <img src="assets/minnie.jpeg" alt="Sudoku game screenshot" class="card-img" />
-                <p class="card-description">A web-based sudoku game built with python.</p>
-            </div>
-            <div class="project-pokemon-card">
-                <div>
-                    <span class="card-title">Minesweeper</span>
-                    <span class="card-type">Logic</span>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/spiderman.jpeg" alt="TPED - Interactive Design Product" />
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Project</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>TPED - Interactive Design Product (In Development)</h3>
+                        <p>A semester long group project with the TPED team that aims to create new interactive experiences for guests visiting the fictional DinoLand.</p>
+                        <div class="tech-stack">
+                            <span>TBD</span>
+                            <span>TBD</span>
+                            <span>TBD</span>
+                        </div>
+                    </div>
                 </div>
-                <img src="assets/spiderman.jpeg" alt="Minesweeper game screenshot" class="card-img" />
-                <p class="card-description">A web-based minesweeper game built with python.</p>
-            </div>
-            <div class="project-pokemon-card">
-                <div>
-                    <span class="card-title">Minecraft</span>
-                    <span class="card-type">Sandbox</span>
-                </div>
-                <img src="assets/whiskey.jpeg" alt="Minecraft game screenshot" class="card-img" />
-                <p class="card-description">A web-based minecraft game built with python.</p>
+                
             </div>
         </div>
     </section>
     <section id="experiences">
-        <h2>Experiences</h2>
-        <p>These are my experiences.</p>
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>Gator Theme Park Engineering & Design (TPED) Member</h3>
+                        <span class="duration"> Fall 2025 - Present</span>
+                    </div>
+                    <p>A multidisciplinary student organization focused on creating a community of theme park enthusiasts at UF</p>
+                    <ul>
+                        <li>Interactive Design Team Fall 2025: DinoLand Interactive</li>
+                        <li>Swamp Haunters Team Fall 2025</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>Women in Computer Science and Engineering Club Member</h3>
+                        <span class="duration">Fall 2024 - Present</span>
+                    </div>
+                    <p>Brief description of your role and responsibilities. This can be a longer paragraph that describes your key achievements and contributions to the organization.</p>
+                    <ul>
+                        <li>Key responsibility or achievement</li>
+                        <li>Another important accomplishment</li>
+                        <li>Skills developed or technologies used</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>Hungarian Student Association Member</h3>
+                        <span class="duration">Fall 2023 - Present</span>
+                    </div>
+                    <p>University of Florida club that promotes Hungarian culture through GBMs, social events, and more.</p>
+                    <ul>
+                        <li>Collaborated with other cultural organizations</li>
+                        <li>Promoted awareness of Hungarian culture on campus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
-    <footer>
-        <h2>Contact me!</h2>
-        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-        <a href="https://www.github.com" target="_blank">GitHub</a>
+    
+    <footer id="contact">
+        <div class="container">
+            <h2>Let's Create Magic Together</h2>
+            <p>Ready to discuss the future of theme park technology and immersive experiences?</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/boglarkacsanadi" target="_blank" class="contact-btn linkedin">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/bcsanadi" target="_blank" class="contact-btn github">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
