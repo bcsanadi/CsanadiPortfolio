@@ -1,4 +1,13 @@
-/* Modern Professional Portfolio Styles */
+/* Modern Professional Portfolio Styles - VelociCoaster Inspired */
+:root {
+    --primary-color: #1a5f5f; /* Deep teal */
+    --secondary-color: #2d8a47; /* Forest green */
+    --accent-color: #4da6d9; /* Electric blue */
+    --pink-accent: #e91e63; /* Pink hints */
+    --text-dark: #2c3e50;
+    --text-light: #5a6c7d;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,8 +21,8 @@ html {
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: #2c3e50;
-    background: linear-gradient(135deg, #fef8fb 0%, #ffffff 50%, #fdf6fa 100%);
+    color: var(--text-dark);
+    background: linear-gradient(135deg, #e8f5f3 0%, #ffffff 50%, #f0f8f5 100%);
     overflow-x: hidden;
 }
 
@@ -30,21 +39,22 @@ body {
 
 .bg-shape {
     position: absolute;
-    background: linear-gradient(45deg, rgba(255, 182, 193, 0.15), rgba(255, 160, 186, 0.12));
+    background: linear-gradient(45deg, rgba(29, 95, 95, 0.12), rgba(45, 138, 71, 0.08));
     border-radius: 50%;
     animation: float 20s infinite ease-in-out;
 }
 
-/* Add subtle theme park elements */
+/* VelociCoaster inspired background elements */
 .animated-bg::before {
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 160, 186, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255, 105, 180, 0.04) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(29, 95, 95, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(45, 138, 71, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(77, 166, 217, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(233, 30, 99, 0.03) 0%, transparent 40%);
     pointer-events: none;
 }
 
@@ -134,7 +144,7 @@ nav {
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #e91e63;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
@@ -146,7 +156,7 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #2c3e50;
+    color: var(--text-dark);
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
@@ -159,7 +169,7 @@ nav a::after {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background: linear-gradient(90deg, #e91e63, #ff69b4);
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
     transition: width 0.3s ease;
 }
 
@@ -168,7 +178,7 @@ nav a:hover::after {
 }
 
 nav a:hover {
-    color: #e91e63;
+    color: var(--primary-color);
 }
 
 /* Hero Section */
@@ -198,7 +208,7 @@ nav a:hover {
 
 .greeting {
     font-size: 1.3rem;
-    color: #e91e63;
+    color: var(--secondary-color);
     font-weight: 500;
     margin-bottom: 0.5rem;
     display: block;
@@ -207,14 +217,14 @@ nav a:hover {
 .name {
     font-size: 3.5rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: var(--text-dark);
     margin-bottom: 1rem;
     line-height: 1.2;
 }
 
 .tagline {
     font-size: 1.3rem;
-    color: #6c757d;
+    color: var(--text-light);
     margin-bottom: 2rem;
     line-height: 1.4;
 }
@@ -235,30 +245,30 @@ nav a:hover {
 }
 
 .btn.primary {
-    background: linear-gradient(135deg, #e91e63 0%, #ff69b4 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
     color: white;
     border: 2px solid transparent;
 }
 
 .btn.primary:hover {
     background: transparent;
-    color: #e91e63;
-    border: 2px solid #e91e63;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+    box-shadow: 0 5px 15px rgba(29, 95, 95, 0.3);
 }
 
 .btn.secondary {
     background: transparent;
-    color: #e91e63;
-    border: 2px solid #e91e63;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
 }
 
 .btn.secondary:hover {
-    background: linear-gradient(135deg, #e91e63 0%, #ff69b4 100%);
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+    box-shadow: 0 5px 15px rgba(45, 138, 71, 0.3);
 }
 
 .hero-image {
@@ -272,8 +282,8 @@ nav a:hover {
     height: 350px;
     border-radius: 50%;
     object-fit: cover;
-    border: 6px solid rgba(233, 30, 99, 0.3);
-    box-shadow: 0 20px 40px rgba(233, 30, 99, 0.15);
+    border: 6px solid rgba(29, 95, 95, 0.3);
+    box-shadow: 0 20px 40px rgba(45, 138, 71, 0.15);
     transition: transform 0.3s ease;
 }
 
@@ -292,8 +302,8 @@ nav a:hover {
 .scroll-arrow {
     width: 24px;
     height: 24px;
-    border-right: 2px solid #e91e63;
-    border-bottom: 2px solid #e91e63;
+    border-right: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
     transform: rotate(45deg);
     animation: bounce 2s infinite;
 }
@@ -340,7 +350,7 @@ section {
 h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: var(--text-dark);
     margin-bottom: 3rem;
     text-align: center;
     position: relative;
@@ -351,7 +361,7 @@ h2::after {
     position: absolute;
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, #e91e63, #ff69b4);
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
@@ -370,7 +380,7 @@ h2::after {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
-    color: #5a6c7d;
+    color: var(--text-light);
 }
 
 .about-details {
@@ -383,18 +393,18 @@ h2::after {
     background: rgba(255, 255, 255, 0.7);
     padding: 1.5rem;
     border-radius: 12px;
-    border-top: 3px solid #e91e63;
-    box-shadow: 0 2px 15px rgba(233, 30, 99, 0.08);
+    border-top: 3px solid var(--primary-color);
+    box-shadow: 0 2px 15px rgba(29, 95, 95, 0.08);
     transition: all 0.3s ease;
 }
 
 .detail-section:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(233, 30, 99, 0.12);
+    box-shadow: 0 4px 20px rgba(45, 138, 71, 0.12);
 }
 
 .detail-section h3 {
-    color: #e91e63;
+    color: var(--primary-color);
     margin-bottom: 1rem;
     font-size: 1.2rem;
     font-weight: 600;
@@ -402,12 +412,12 @@ h2::after {
 
 .detail-section p {
     margin-bottom: 0.5rem;
-    color: #2c3e50;
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
 .detail-section p strong {
-    color: #e91e63;
+    color: var(--secondary-color);
     font-weight: 600;
 }
 
@@ -423,7 +433,7 @@ h2::after {
     justify-content: space-between;
     align-items: flex-start;
     padding: 0.8rem 0;
-    border-bottom: 1px solid rgba(233, 30, 99, 0.1);
+    border-bottom: 1px solid rgba(29, 95, 95, 0.1);
     transition: all 0.3s ease;
 }
 
@@ -433,12 +443,12 @@ h2::after {
 
 .cert-item:hover {
     padding-left: 0.5rem;
-    background: rgba(255, 182, 193, 0.05);
+    background: rgba(29, 95, 95, 0.05);
     border-radius: 6px;
 }
 
 .cert-name {
-    color: #2c3e50;
+    color: var(--text-dark);
     font-weight: 500;
     flex: 1;
     margin-right: 1rem;
@@ -446,11 +456,11 @@ h2::after {
 }
 
 .cert-status {
-    color: #e91e63;
+    color: var(--primary-color);
     font-size: 0.9rem;
     font-weight: 600;
     white-space: nowrap;
-    background: rgba(233, 30, 99, 0.1);
+    background: rgba(29, 95, 95, 0.1);
     padding: 0.2rem 0.6rem;
     border-radius: 12px;
 }
@@ -478,26 +488,26 @@ h2::after {
 }
 
 .skill-tag {
-    background: linear-gradient(135deg, #fef8fb, #fdecf0);
-    color: #e91e63;
+    background: linear-gradient(135deg, #e8f5f3, #f0f8f5);
+    color: var(--primary-color);
     padding: 8px 16px;
     border-radius: 25px;
     font-size: 0.9rem;
     font-weight: 500;
-    border: 2px solid rgba(233, 30, 99, 0.2);
+    border: 2px solid rgba(29, 95, 95, 0.2);
     transition: all 0.3s ease;
 }
 
 .skill-tag:hover {
-    background: linear-gradient(135deg, #e91e63, #ff69b4);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+    box-shadow: 0 4px 12px rgba(29, 95, 95, 0.3);
 }
 
 /* Projects Section */
 #projects {
-    background: linear-gradient(135deg, #fefafc 0%, #fdf6fa 100%);
+    background: linear-gradient(135deg, #e8f5f3 0%, #f0f8f5 100%);
 }
 
 .projects-grid {
@@ -538,7 +548,7 @@ h2::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(198, 111, 153, 0.9), rgba(158, 98, 204, 0.9));
+    background: linear-gradient(135deg, rgba(29, 95, 95, 0.9), rgba(77, 166, 217, 0.8));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -562,7 +572,7 @@ h2::after {
 .project-link {
     padding: 10px 20px;
     background: white;
-    color: #c66f99;
+    color: var(--primary-color);
     text-decoration: none;
     border-radius: 25px;
     font-weight: 600;
@@ -570,7 +580,7 @@ h2::after {
 }
 
 .project-link:hover {
-    background: #c66f99;
+    background: darkgreen;
     color: white;
 }
 
@@ -581,11 +591,11 @@ h2::after {
 .project-info h3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: var(--text-dark);
 }
 
 .project-info p {
-    color: #7f8c8d;
+    color: var(--text-light);
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
@@ -597,13 +607,13 @@ h2::after {
 }
 
 .tech-stack span {
-    background: linear-gradient(135deg, #faf7f9, #f8f4f7);
-    color: #c66f99;
+    background: linear-gradient(135deg, #e8f5f3, #f0f8f5);
+    color: var(--secondary-color);
     padding: 4px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: 500;
-    border: 1px solid rgba(198, 111, 153, 0.2);
+    border: 1px solid rgba(45, 138, 71, 0.2);
 }
 
 /* Experience Section */
@@ -620,14 +630,14 @@ h2::after {
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid #e91e63;
+    border-left: 4px solid var(--secondary-color);
     height: fit-content;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .experience-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(233, 30, 99, 0.15);
+    box-shadow: 0 15px 40px rgba(45, 138, 71, 0.15);
 }
 
 .experience-header {
@@ -640,14 +650,14 @@ h2::after {
 
 .experience-header h3 {
     font-size: 1.3rem;
-    color: #2c3e50;
+    color: var(--text-dark);
     margin: 0;
     line-height: 1.3;
     flex: 1;
 }
 
 .duration {
-    color: #e91e63;
+    color: var(--pink-accent);
     font-weight: 600;
     font-size: 0.9rem;
     white-space: nowrap;
@@ -657,7 +667,7 @@ h2::after {
 }
 
 .experience-card p {
-    color: #5a6c7d;
+    color: var(--text-light);
     margin-bottom: 1.5rem;
     line-height: 1.7;
     font-size: 1rem;
@@ -670,7 +680,7 @@ h2::after {
 }
 
 .experience-card li {
-    color: #5a6c7d;
+    color: var(--text-light);
     margin-bottom: 0.8rem;
     position: relative;
     padding-left: 1.5rem;
@@ -683,7 +693,7 @@ h2::after {
 
 .experience-card li::before {
     content: '▶';
-    color: #e91e63;
+    color: var(--accent-color);
     position: absolute;
     left: 0;
     top: 0;
@@ -760,6 +770,12 @@ footer p {
 .github:hover {
     background: #333;
     border-color: #333;
+    color: white;
+}
+
+.email:hover {
+    background: #e91e63;
+    border-color: #e91e63;
     color: white;
 }
 
