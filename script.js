@@ -12,3 +12,21 @@ if (hour < 12) {
 }
 
 document.getElementById("greeting").textContent = greeting;
+
+// Back to Top Button functionality
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Show/hide back to top button based on scroll position
+window.addEventListener('scroll', function() {
+    const backToTopButton = document.getElementById('backToTop');
+    if (window.pageYOffset > 300) { // Show button after scrolling 300px
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
+});

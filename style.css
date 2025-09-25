@@ -849,7 +849,60 @@ footer p {
     color: white;
 }
 
-/* Responsive Design */
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border: 3px solid var(--accent-color);
+    border-radius: 0px; /* Square, pixelated design */
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1000;
+    transition: all 0.2s ease;
+    box-shadow: 
+        4px 4px 0px rgba(29, 95, 95, 0.8),
+        2px 2px 0px rgba(77, 166, 217, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--accent-color);
+    transform: translate(2px, 2px);
+    box-shadow: 
+        2px 2px 0px rgba(29, 95, 95, 0.8),
+        1px 1px 0px rgba(77, 166, 217, 0.5);
+}
+
+.back-to-top:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 16px;
+    }
+}
 @media (max-width: 768px) {
     .hero-content {
         grid-template-columns: 1fr;
