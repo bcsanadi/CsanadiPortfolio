@@ -1,4 +1,6 @@
-/* Modern Professional Portfolio Styles - VelociCoaster Inspired */
+/* Modern Professional Portfolio Styles - VelociCoaster Inspired with Pixelated Aesthetic */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;900&display=swap');
+
 :root {
     --primary-color: #1a5f5f; /* Deep teal */
     --secondary-color: #2d8a47; /* Forest green */
@@ -19,14 +21,14 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'JetBrains Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, monospace;
     line-height: 1.6;
     color: var(--text-dark);
     background: linear-gradient(135deg, #e8f5f3 0%, #ffffff 50%, #f0f8f5 100%);
     overflow-x: hidden;
 }
 
-/* Animated Background */
+/* Animated Background - removed floating shapes */
 .animated-bg {
     position: fixed;
     top: 0;
@@ -37,14 +39,9 @@ body {
     overflow: hidden;
 }
 
-.bg-shape {
-    position: absolute;
-    background: linear-gradient(45deg, rgba(29, 95, 95, 0.12), rgba(45, 138, 71, 0.08));
-    border-radius: 50%;
-    animation: float 20s infinite ease-in-out;
-}
+/* Remove the floating bg-shape elements */
 
-/* VelociCoaster inspired background elements */
+/* VelociCoaster inspired background elements with pixelated touches */
 .animated-bg::before {
     content: '';
     position: absolute;
@@ -54,63 +51,25 @@ body {
         radial-gradient(circle at 20% 80%, rgba(29, 95, 95, 0.08) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(45, 138, 71, 0.06) 0%, transparent 50%),
         radial-gradient(circle at 40% 40%, rgba(77, 166, 217, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 70% 60%, rgba(233, 30, 99, 0.03) 0%, transparent 40%);
+        radial-gradient(circle at 70% 60%, rgba(29, 95, 95, 0.03) 0%, transparent 40%);
+    background-size: 40px 40px, 60px 60px, 30px 30px, 50px 50px; /* Add pixelated sizing */
     pointer-events: none;
 }
 
-/* Subtle background gradients */
+/* Subtle background gradients - VelociCoaster themed */
 .animated-bg::before {
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 160, 186, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255, 105, 180, 0.04) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(29, 95, 95, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(45, 138, 71, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(77, 166, 217, 0.04) 0%, transparent 50%);
     pointer-events: none;
 }
 
-@keyframes sparkle {
-    0%, 100% { opacity: 0.3; transform: scale(1); }
-    50% { opacity: 0.6; transform: scale(1.2); }
-}
-
-.shape1 {
-    width: 300px;
-    height: 300px;
-    top: 10%;
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.shape2 {
-    width: 200px;
-    height: 200px;
-    top: 60%;
-    right: 15%;
-    animation-delay: 7s;
-}
-
-.shape3 {
-    width: 150px;
-    height: 150px;
-    bottom: 20%;
-    left: 60%;
-    animation-delay: 14s;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    33% {
-        transform: translateY(-30px) rotate(120deg);
-    }
-    66% {
-        transform: translateY(20px) rotate(240deg);
-    }
-}
+/* Remove the individual shape definitions and float animation */
 
 /* Container */
 .container {
@@ -190,6 +149,41 @@ nav a:hover {
     align-items: center;
     padding-top: 70px;
     position: relative;
+    overflow: hidden;
+}
+
+/* Roller Coaster GIF Background */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/coaster_pixil.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.25;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Gradient blend for smooth transition */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    background: linear-gradient(to bottom, 
+        transparent 0%, 
+        transparent 85%,
+        var(--primary-color) 85%,
+        var(--primary-color) 100%);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .hero-content {
@@ -200,6 +194,8 @@ nav a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-text {
@@ -217,9 +213,11 @@ nav a:hover {
 .name {
     font-size: 3.5rem;
     font-weight: 700;
+    font-family: 'Orbitron', 'JetBrains Mono', monospace;
     color: var(--text-dark);
     margin-bottom: 1rem;
     line-height: 1.2;
+    text-shadow: 2px 2px 0px rgba(29, 95, 95, 0.3);
 }
 
 .tagline {
@@ -237,38 +235,65 @@ nav a:hover {
 
 .btn {
     padding: 12px 30px;
-    border-radius: 6px;
+    border-radius: 0px; /* Remove rounded corners for pixelated look */
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    font-family: 'JetBrains Mono', monospace;
+    transition: all 0.2s ease;
     display: inline-block;
+    border: 3px solid transparent;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: transparent;
+    border: 2px solid transparent;
+    z-index: -1;
+    transition: all 0.2s ease;
 }
 
 .btn.primary {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
     color: white;
-    border: 2px solid transparent;
+    border: 3px solid var(--primary-color);
+    box-shadow: 
+        4px 4px 0px rgba(29, 95, 95, 0.8),
+        2px 2px 0px rgba(77, 166, 217, 0.5);
 }
 
 .btn.primary:hover {
-    background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(29, 95, 95, 0.3);
+    background: var(--primary-color);
+    color: white;
+    transform: translate(2px, 2px);
+    box-shadow: 
+        2px 2px 0px rgba(29, 95, 95, 0.8),
+        1px 1px 0px rgba(77, 166, 217, 0.5);
 }
 
 .btn.secondary {
-    background: transparent;
+    background: white;
     color: var(--secondary-color);
-    border: 2px solid var(--secondary-color);
+    border: 3px solid var(--secondary-color);
+    box-shadow: 
+        4px 4px 0px rgba(45, 138, 71, 0.8),
+        2px 2px 0px rgba(77, 166, 217, 0.3);
 }
 
 .btn.secondary:hover {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    background: var(--secondary-color);
     color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(45, 138, 71, 0.3);
+    transform: translate(2px, 2px);
+    box-shadow: 
+        2px 2px 0px rgba(45, 138, 71, 0.8),
+        1px 1px 0px rgba(77, 166, 217, 0.3);
 }
 
 .hero-image {
@@ -297,6 +322,7 @@ nav a:hover {
     left: 50%;
     transform: translateX(-50%);
     text-decoration: none;
+    z-index: 2;
 }
 
 .scroll-arrow {
@@ -350,21 +376,26 @@ section {
 h2 {
     font-size: 2.5rem;
     font-weight: 700;
+    font-family: 'Orbitron', 'JetBrains Mono', monospace;
     color: var(--text-dark);
     margin-bottom: 3rem;
     text-align: center;
     position: relative;
+    text-shadow: 3px 3px 0px rgba(29, 95, 95, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 h2::after {
     content: '';
     position: absolute;
-    width: 60px;
-    height: 4px;
+    width: 80px;
+    height: 6px;
     background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-    bottom: -10px;
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
+    box-shadow: 0 2px 0px rgba(29, 95, 95, 0.5); /* Add pixelated shadow */
 }
 
 /* About Section */
@@ -390,17 +421,22 @@ h2::after {
 }
 
 .detail-section {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.9);
     padding: 1.5rem;
-    border-radius: 12px;
-    border-top: 3px solid var(--primary-color);
-    box-shadow: 0 2px 15px rgba(29, 95, 95, 0.08);
-    transition: all 0.3s ease;
+    border-radius: 0px; /* Remove rounded corners */
+    border: 3px solid var(--primary-color);
+    border-top: 6px solid var(--primary-color); /* Keep thicker top border */
+    box-shadow: 
+        4px 4px 0px rgba(29, 95, 95, 0.4),
+        2px 2px 0px rgba(77, 166, 217, 0.2);
+    transition: all 0.2s ease;
 }
 
 .detail-section:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(45, 138, 71, 0.12);
+    transform: translate(2px, 2px);
+    box-shadow: 
+        2px 2px 0px rgba(29, 95, 95, 0.4),
+        1px 1px 0px rgba(77, 166, 217, 0.2);
 }
 
 .detail-section h3 {
@@ -491,18 +527,24 @@ h2::after {
     background: linear-gradient(135deg, #e8f5f3, #f0f8f5);
     color: var(--primary-color);
     padding: 8px 16px;
-    border-radius: 25px;
+    border-radius: 0px; /* Remove rounded corners */
     font-size: 0.9rem;
-    font-weight: 500;
-    border: 2px solid rgba(29, 95, 95, 0.2);
-    transition: all 0.3s ease;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    border: 2px solid var(--primary-color);
+    box-shadow: 
+        3px 3px 0px rgba(29, 95, 95, 0.4);
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .skill-tag:hover {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-color);
     color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(29, 95, 95, 0.3);
+    transform: translate(2px, 2px);
+    box-shadow: 
+        1px 1px 0px rgba(29, 95, 95, 0.4);
 }
 
 /* Projects Section */
@@ -518,15 +560,20 @@ h2::after {
 
 .project-card {
     background: white;
-    border-radius: 12px;
+    border-radius: 0px; /* Remove rounded corners */
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 4px solid var(--primary-color);
+    box-shadow: 
+        8px 8px 0px rgba(29, 95, 95, 0.6),
+        4px 4px 0px rgba(77, 166, 217, 0.3);
+    transition: all 0.2s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    transform: translate(4px, 4px);
+    box-shadow: 
+        4px 4px 0px rgba(29, 95, 95, 0.6),
+        2px 2px 0px rgba(77, 166, 217, 0.3);
 }
 
 .project-image {
@@ -627,17 +674,22 @@ h2::after {
 
 .experience-card {
     background: white;
-    border-radius: 12px;
+    border-radius: 0px; /* Remove rounded corners */
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid var(--secondary-color);
+    border: 4px solid var(--secondary-color);
+    border-left: 8px solid var(--secondary-color); /* Keep thicker left border but make it pixelated */
+    box-shadow: 
+        6px 6px 0px rgba(45, 138, 71, 0.5),
+        3px 3px 0px rgba(77, 166, 217, 0.2);
     height: fit-content;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .experience-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(45, 138, 71, 0.15);
+    transform: translate(3px, 3px);
+    box-shadow: 
+        3px 3px 0px rgba(45, 138, 71, 0.5),
+        1px 1px 0px rgba(77, 166, 217, 0.2);
 }
 
 .experience-header {
@@ -749,16 +801,23 @@ footer p {
     background: transparent;
     color: white;
     text-decoration: none;
-    border: 2px solid white;
-    border-radius: 6px;
+    border: 3px solid white;
+    border-radius: 0px; /* Remove rounded corners */
     font-weight: 600;
-    transition: all 0.3s ease;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 
+        4px 4px 0px rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
 }
 
 .contact-btn:hover {
     background: white;
     color: #2c3e50;
-    transform: translateY(-2px);
+    transform: translate(2px, 2px);
+    box-shadow: 
+        2px 2px 0px rgba(255, 255, 255, 0.3);
 }
 
 .linkedin:hover {
@@ -785,6 +844,12 @@ footer p {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+    }
+    
+    /* Adjust roller coaster gif for mobile */
+    .hero::before {
+        background-size: cover;
+        opacity: 0.08;
     }
     
     .name {
