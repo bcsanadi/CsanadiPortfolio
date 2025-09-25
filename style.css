@@ -416,8 +416,13 @@ h2::after {
 
 .about-details {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
     gap: 2rem;
+}
+
+.detail-section:nth-child(3) {
+    grid-column: 1 / -1; /* Make certifications card span full width */
 }
 
 .detail-section {
@@ -457,7 +462,7 @@ h2::after {
     font-weight: 600;
 }
 
-/* Certifications List */
+/* Certifications List - Back to vertical list */
 .certifications-list {
     display: flex;
     flex-direction: column;
@@ -470,7 +475,7 @@ h2::after {
     align-items: flex-start;
     padding: 0.8rem 0;
     border-bottom: 1px solid rgba(29, 95, 95, 0.1);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .cert-item:last-child {
@@ -480,7 +485,7 @@ h2::after {
 .cert-item:hover {
     padding-left: 0.5rem;
     background: rgba(29, 95, 95, 0.05);
-    border-radius: 6px;
+    border-radius: 0px;
 }
 
 .cert-name {
@@ -498,7 +503,11 @@ h2::after {
     white-space: nowrap;
     background: rgba(29, 95, 95, 0.1);
     padding: 0.2rem 0.6rem;
-    border-radius: 12px;
+    border-radius: 0px;
+    border: 1px solid rgba(29, 95, 95, 0.3);
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 @media (max-width: 768px) {
@@ -506,14 +515,8 @@ h2::after {
         grid-template-columns: 1fr;
     }
     
-    .cert-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.3rem;
-    }
-    
-    .cert-status {
-        align-self: flex-start;
+    .certifications-list {
+        grid-template-columns: 1fr;
     }
 }
 
